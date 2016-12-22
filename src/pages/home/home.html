@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Fae Falta
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-fab bottom right>
+    <button ion-fab (click)="add()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+  <ion-list>
+    <ion-list-header>
+      Esto ye lo que nos Fae Falta:
+    </ion-list-header>
+    <ion-item-sliding *ngFor="let cosa of lista | async" (click)="ver(cosa.$key, cosa.nombre)">
+      <ion-item>
+        {{cosa.nombre}}<ion-badge item-right>{{cosa.cuantos}}</ion-badge>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="borrar(cosa.$key)">
+          <ion-icon name="trash"></ion-icon>
+          borrar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
