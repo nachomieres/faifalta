@@ -20,7 +20,7 @@ export class HomePage {
 
   add () {
     let prompt = this.alertCtrl.create({
-      title: 'Fae falta...',
+      title: 'Fae falta',
       message: "",
       inputs: [
         {
